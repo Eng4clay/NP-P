@@ -1,0 +1,1973 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>كورس التداول الشامل – من الصفر إلى الاحتراف</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=Tajawal:wght@300;400;500;700;900&display=swap');
+
+  :root {
+    --gold: #B8860B;
+    --gold-light: #FFD700;
+    --navy: #0D1B2A;
+    --navy-mid: #1B2B3A;
+    --teal: #1A6B72;
+    --teal-light: #2AA198;
+    --bg: #F8F6F0;
+    --white: #FFFFFF;
+    --text: #1C1C1C;
+    --muted: #5A5A5A;
+    --border: #D4C89A;
+    --red: #8B1A1A;
+    --green: #1A5C2E;
+    --orange: #8B4513;
+    --purple: #4A1A6B;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Cairo', 'Tajawal', 'Arial', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 15px;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    background: linear-gradient(135deg, var(--navy) 0%, #0a2a3a 50%, #0d1f35 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at center, rgba(184,134,11,0.15) 0%, transparent 70%);
+  }
+
+  .cover-badge {
+    background: var(--gold);
+    color: var(--navy);
+    padding: 8px 28px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    position: relative;
+  }
+
+  .cover h1 {
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    position: relative;
+    background: linear-gradient(135deg, #FFD700, #FFF8DC, #FFD700);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .cover h2 {
+    font-size: 22px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 50px;
+    position: relative;
+  }
+
+  .cover-divider {
+    width: 120px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 30px auto;
+    position: relative;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    margin: 40px 0;
+    position: relative;
+  }
+
+  .cover-stat {
+    text-align: center;
+  }
+
+  .cover-stat .num {
+    font-size: 38px;
+    font-weight: 900;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .cover-stat .lbl {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .cover-footer {
+    position: relative;
+    margin-top: 50px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.5);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  /* ===== TABLE OF CONTENTS ===== */
+  .toc-page {
+    background: white;
+    padding: 60px 80px;
+    min-height: 100vh;
+    page-break-after: always;
+  }
+
+  .toc-title {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--navy);
+    border-bottom: 3px solid var(--gold);
+    padding-bottom: 16px;
+    margin-bottom: 40px;
+  }
+
+  .toc-section {
+    margin-bottom: 28px;
+  }
+
+  .toc-section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--teal);
+    margin-bottom: 10px;
+    padding-right: 12px;
+    border-right: 3px solid var(--gold);
+  }
+
+  .toc-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .toc-item .toc-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+
+  .toc-item .toc-dots {
+    flex: 1;
+    border-bottom: 1px dotted #ccc;
+    margin: 0 10px;
+    height: 1px;
+    margin-top: 10px;
+  }
+
+  /* ===== GENERAL PAGE STYLES ===== */
+  .page {
+    background: white;
+    padding: 50px 70px;
+    margin: 0;
+    page-break-before: always;
+    min-height: 100vh;
+  }
+
+  .page-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .section-header {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    color: white;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .section-number {
+    background: var(--gold);
+    color: var(--navy);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .section-header .sub {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    margin: 0;
+  }
+
+  /* ===== MODULE STYLES ===== */
+  .module {
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .module-header {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+    color: white;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .module-num {
+    background: rgba(255,255,255,0.2);
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .module-header h3 {
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  .module-body {
+    padding: 24px;
+    background: #FAFAF8;
+  }
+
+  /* ===== LESSON STYLES ===== */
+  .lesson {
+    margin-bottom: 24px;
+    padding: 18px 20px;
+    background: white;
+    border-radius: 8px;
+    border-right: 4px solid var(--gold);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  .lesson h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .lesson-icon {
+    background: var(--gold);
+    color: white;
+    width: 24px; height: 24px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .lesson ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .lesson ul li {
+    padding: 5px 0;
+    padding-right: 20px;
+    position: relative;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .lesson ul li::before {
+    content: '◆';
+    position: absolute;
+    right: 0;
+    color: var(--gold);
+    font-size: 8px;
+    top: 8px;
+  }
+
+  /* ===== QUIZ STYLES ===== */
+  .quiz-box {
+    background: linear-gradient(135deg, #FFF9E6, #FFFBF0);
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 20px;
+  }
+
+  .quiz-box h4 {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .quiz-item {
+    margin-bottom: 12px;
+    padding-right: 20px;
+    position: relative;
+    font-size: 14px;
+  }
+
+  .quiz-item::before {
+    content: 'Q';
+    position: absolute;
+    right: 0;
+    color: var(--teal);
+    font-weight: 900;
+    font-size: 12px;
+    top: 2px;
+  }
+
+  .quiz-answer {
+    display: inline;
+    background: #E8F5E9;
+    color: var(--green);
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-right: 6px;
+  }
+
+  /* ===== ALERT BOXES ===== */
+  .alert {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin: 14px 0;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .alert-icon {
+    font-size: 20px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .alert-note {
+    background: #EFF6FF;
+    border-right: 4px solid #3B82F6;
+    color: #1E40AF;
+  }
+
+  .alert-warning {
+    background: #FFF7ED;
+    border-right: 4px solid #F97316;
+    color: #9A3412;
+  }
+
+  .alert-tip {
+    background: #F0FDF4;
+    border-right: 4px solid #22C55E;
+    color: #14532D;
+  }
+
+  .alert-example {
+    background: #F5F3FF;
+    border-right: 4px solid #8B5CF6;
+    color: #3730A3;
+  }
+
+  .alert-error {
+    background: #FFF1F2;
+    border-right: 4px solid #EF4444;
+    color: #991B1B;
+  }
+
+  /* ===== GLOSSARY ===== */
+  .glossary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .glossary-item {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 16px;
+  }
+
+  .glossary-term {
+    font-weight: 700;
+    color: var(--teal);
+    font-size: 14px;
+    margin-bottom: 4px;
+  }
+
+  .glossary-def {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ===== SCHEDULE TABLE ===== */
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 20px 0;
+  }
+
+  .schedule-table th {
+    background: var(--navy);
+    color: white;
+    padding: 12px 16px;
+    font-weight: 700;
+    text-align: right;
+  }
+
+  .schedule-table td {
+    padding: 10px 16px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+  }
+
+  .schedule-table tr:nth-child(even) td {
+    background: #F8F8F6;
+  }
+
+  .schedule-table td:first-child {
+    font-weight: 700;
+    color: var(--teal);
+    white-space: nowrap;
+  }
+
+  /* ===== KEY TAKEAWAYS ===== */
+  .takeaway-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .takeaway-item {
+    background: linear-gradient(135deg, var(--navy), #1B2B4A);
+    color: white;
+    padding: 14px 18px;
+    border-radius: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .takeaway-num {
+    background: var(--gold);
+    color: var(--navy);
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 900;
+    flex-shrink: 0;
+  }
+
+  .takeaway-text {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  /* ===== PRACTICAL ASSIGNMENT ===== */
+  .assignment-box {
+    background: linear-gradient(135deg, #0D1B2A, #1B3A4A);
+    color: white;
+    padding: 30px;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .assignment-box::before {
+    content: '📋';
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 60px;
+    opacity: 0.1;
+  }
+
+  .assignment-box h3 {
+    color: var(--gold-light);
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .assignment-step {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 12px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    background: var(--gold);
+    color: var(--navy);
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 900;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .step-text {
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ===== MIND MAP ===== */
+  .mindmap-page {
+    background: var(--navy);
+    color: white;
+    padding: 50px 60px;
+    page-break-before: always;
+    min-height: 100vh;
+  }
+
+  .mindmap-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold-light);
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255,215,0,0.3);
+  }
+
+  .mindmap-center {
+    text-align: center;
+    background: linear-gradient(135deg, var(--gold), #DAA520);
+    color: var(--navy);
+    padding: 20px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 40px;
+    display: inline-block;
+    width: 100%;
+  }
+
+  .mm-branch {
+    margin-bottom: 30px;
+    border-right: 2px solid rgba(255,215,0,0.3);
+    padding-right: 20px;
+  }
+
+  .mm-branch-title {
+    background: rgba(255,215,0,0.15);
+    border: 1px solid rgba(255,215,0,0.4);
+    color: var(--gold-light);
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mm-branch-icon {
+    font-size: 18px;
+  }
+
+  .mm-sub {
+    padding-right: 30px;
+    margin-bottom: 8px;
+  }
+
+  .mm-sub-title {
+    color: var(--teal-light);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mm-sub-title::before {
+    content: '├──';
+    color: rgba(255,215,0,0.4);
+    font-size: 13px;
+    font-family: monospace;
+  }
+
+  .mm-leaf {
+    padding-right: 50px;
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    margin: 4px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .mm-leaf::before {
+    content: '│   ├─';
+    color: rgba(255,215,0,0.2);
+    font-size: 11px;
+    font-family: monospace;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .mm-alert {
+    background: rgba(239,68,68,0.15);
+    border: 1px solid rgba(239,68,68,0.3);
+    color: #FCA5A5;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-right: 50px;
+    margin-top: 4px;
+  }
+
+  .mm-note {
+    background: rgba(59,130,246,0.15);
+    border: 1px solid rgba(59,130,246,0.3);
+    color: #93C5FD;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    margin-right: 50px;
+    margin-top: 4px;
+  }
+
+  /* ===== QUICK SUMMARY ===== */
+  .summary-page {
+    background: linear-gradient(135deg, var(--navy) 0%, #0a2030 100%);
+    color: white;
+    padding: 50px 70px;
+    page-break-before: always;
+    min-height: 100vh;
+  }
+
+  .summary-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold-light);
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .summary-subtitle {
+    text-align: center;
+    color: rgba(255,255,255,0.6);
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 14px;
+  }
+
+  .summary-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,215,0,0.2);
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+  }
+
+  .summary-item .s-num {
+    position: absolute;
+    top: -10px;
+    right: 16px;
+    background: var(--gold);
+    color: var(--navy);
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 900;
+  }
+
+  .summary-item p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    margin-top: 4px;
+  }
+
+  /* ===== TYPOGRAPHY ===== */
+  h2.page-title {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--navy);
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .intro-box {
+    background: linear-gradient(135deg, #EFF6FF, #F0F9FF);
+    border: 1px solid #BFDBFE;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 30px;
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: #1E3A5F;
+  }
+
+  p { margin-bottom: 12px; font-size: 14.5px; }
+
+  .highlight {
+    background: linear-gradient(120deg, #FFD70033, #FFD70066);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-weight: 600;
+  }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    border: none;
+    border-top: 2px solid var(--border);
+    margin: 30px 0;
+  }
+
+  .gold-divider {
+    border: none;
+    border-top: 1px solid var(--gold);
+    margin: 20px 0;
+    opacity: 0.4;
+  }
+
+  /* ===== PRINT STYLES ===== */
+  @media print {
+    body { background: white; }
+    .page, .toc-page, .mindmap-page, .summary-page { page-break-before: always; }
+    .cover { page-break-after: always; }
+    .no-break { page-break-inside: avoid; }
+    a { text-decoration: none; }
+  }
+
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  /* ===== MARKET TYPES ===== */
+  .market-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .market-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border-top: 4px solid var(--gold);
+  }
+
+  .market-card .market-icon { font-size: 32px; margin-bottom: 8px; }
+  .market-card h4 { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+  .market-card p { font-size: 13px; color: var(--muted); line-height: 1.5; margin: 0; }
+
+  /* ===== TRADER TYPES ===== */
+  .trader-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+
+  .trader-card {
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .trader-card.short { background: linear-gradient(135deg, #1A5C2E, #2E7D32); color: white; }
+  .trader-card.mid { background: linear-gradient(135deg, #1A4A6B, #1565C0); color: white; }
+  .trader-card.long { background: linear-gradient(135deg, #4A1A6B, #6A1B9A); color: white; }
+
+  .trader-card .t-icon { font-size: 30px; margin-bottom: 10px; }
+  .trader-card h4 { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .trader-card p { font-size: 12px; opacity: 0.85; line-height: 1.5; margin: 0; }
+</style>
+</head>
+<body>
+
+<!-- ===== COVER PAGE ===== -->
+<div class="cover">
+  <div class="cover-badge">📈 دليل تعليمي احترافي شامل</div>
+  <h1>التداول الشامل<br>من الصفر إلى الاحتراف</h1>
+  <h2>كورس متكامل في أسواق المال: فوركس | عملات رقمية | أسهم</h2>
+  <div class="cover-divider"></div>
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <span class="num">5</span>
+      <span class="lbl">وحدات تعليمية</span>
+    </div>
+    <div class="cover-stat">
+      <span class="num">+20</span>
+      <span class="lbl">موضوعاً تحليلياً</span>
+    </div>
+    <div class="cover-stat">
+      <span class="num">5</span>
+      <span class="lbl">أيام خطة الدراسة</span>
+    </div>
+  </div>
+  <div class="cover-footer">
+    دليل تعليمي احترافي · مبني على خبرة 10 سنوات في أسواق المال · جميع الأسواق المالية
+  </div>
+</div>
+
+<!-- ===== TABLE OF CONTENTS ===== -->
+<div class="toc-page">
+  <div class="toc-title">📋 فهرس المحتويات</div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">🎯 المهمة الأولى: هيكل الكورس التعليمي</div>
+    <div class="toc-item"><span class="toc-dot"></span> مقدمة الكورس والأهداف التعليمية <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> الوحدة الأولى: أساسيات التداول ومفاهيمه <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> الوحدة الثانية: منصات وأدوات التداول <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> الوحدة الثالثة: التحليل الفني الشامل <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> الوحدة الرابعة: مفاتيح قراءة السوق <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> الوحدة الخامسة: سيكولوجية التداول <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> أهم 10 خلاصات + مسرد المصطلحات + الخطة الزمنية <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> المشروع العملي التطبيقي <span class="toc-dots"></span></div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">📄 المهمة الثانية: الدليل التعليمي للطباعة</div>
+    <div class="toc-item"><span class="toc-dot"></span> دليل الدعوم والمقاومات <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> دليل الترندات والنماذج السعرية <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> دليل المؤشرات والشموع اليابانية <span class="toc-dots"></span></div>
+    <div class="toc-item"><span class="toc-dot"></span> صفحة الخلاصة السريعة (15 نقطة) <span class="toc-dots"></span></div>
+  </div>
+
+  <div class="toc-section">
+    <div class="toc-section-title">🧠 المهمة الثالثة: الخريطة الذهنية الشاملة</div>
+    <div class="toc-item"><span class="toc-dot"></span> الخريطة الذهنية التفاعلية المرئية <span class="toc-dots"></span></div>
+  </div>
+
+  <hr class="divider">
+  <div class="alert alert-tip">
+    <span class="alert-icon">✅</span>
+    <div><strong>نصيحة ذهبية:</strong> اطبع هذا الدليل وضعه أمامك أثناء التداول للرجوع إليه بسرعة في أي وقت.</div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- ===== TASK 1: THE COURSE ===== -->
+<!-- ============================= -->
+
+<div class="page">
+  <div class="page-label">📚 المهمة الأولى – هيكل الكورس التعليمي</div>
+  <h2 class="page-title">كورس التداول الشامل – من الصفر إلى الاحتراف</h2>
+
+  <div class="intro-box">
+    <strong>ماذا ستتعلم في هذا الكورس؟</strong><br>
+    بنهاية هذا الكورس ستكون قادراً على: فهم آليات عمل أسواق المال الثلاثة (فوركس، عملات رقمية، أسهم)، قراءة الشارت وتحليله باحترافية، تحديد مناطق الشراء والبيع بدقة، استخدام أدوات التحليل الفني والمؤشرات، إدارة المخاطر نفسياً وعملياً، واتخاذ قرارات تداول مبنية على العلم لا على التخمين.
+  </div>
+
+  <!-- MODULE 1 -->
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">١</div>
+      <h3>الوحدة الأولى: أساسيات التداول ومفاهيمه الجوهرية</h3>
+    </div>
+    <div class="module-body">
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">١</span> ما هو التداول وكيف تتحرك الأسواق؟</h4>
+        <ul>
+          <li>تعريف التداول: مبادلة شيء بآخر (بيع وشراء).</li>
+          <li>محركات السوق: العرض والطلب هما القوة الأساسية لأي تحرك سعري.</li>
+          <li>كيف يؤثر كثرة الشراء في رفع السعر، وكثرة البيع في خفضه.</li>
+          <li>الفرق بين التداول العشوائي والتداول المبني على التحليل.</li>
+        </ul>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٢</span> أنواع الأسواق المالية الثلاثة</h4>
+        <div class="market-cards">
+          <div class="market-card">
+            <div class="market-icon">₿</div>
+            <h4>العملات الرقمية</h4>
+            <p>بيتكوين وغيره من الأصول الرقمية – أعلى تقلباً وأكبر فرصاً.</p>
+          </div>
+          <div class="market-card">
+            <div class="market-icon">💱</div>
+            <h4>الفوركس</h4>
+            <p>تداول العملات الوطنية: يورو، دولار، إسترليني، ين.</p>
+          </div>
+          <div class="market-card">
+            <div class="market-icon">📊</div>
+            <h4>الأسهم</h4>
+            <p>أسهم الشركات العالمية: تسلا، آبل، أمازون، ميتا.</p>
+          </div>
+        </div>
+        <ul>
+          <li>الأسواق الثلاثة منفصلة تماماً في منصاتها لكنها تتشابه في علوم التحليل.</li>
+          <li>الشارت (الرسم البياني) واحد في مبدئه عبر جميع الأسواق.</li>
+        </ul>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٣</span> كيف تكسب من التداول؟</h4>
+        <ul>
+          <li>المبدأ الذهبي: شراء بسعر منخفض، بيع بسعر أعلى → الفرق هو الربح.</li>
+          <li>95% من المبتدئين يدخلون بدافع الطمع دون دراسة = خسارة مؤكدة.</li>
+          <li>علوم التحليل هي التي تحول قراراتك من عشوائية إلى محسوبة.</li>
+        </ul>
+        <div class="alert alert-warning">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>تحذير:</strong> التداول العشوائي بلا تحليل ليس تداولاً، إنه قمار. لا تدخل السوق بدون استراتيجية واضحة.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٤</span> المكسب والخسارة – الحقيقة التي يتجاهلها المبتدئون</h4>
+        <ul>
+          <li>التداول مكسب وخسارة حتماً – لا أحد يربح 100% من صفقاته.</li>
+          <li>أخطر فخ: دخول السوق وأنت لا تتصور احتمال الخسارة.</li>
+          <li>الروح الرياضية وتقبل الخسارة شرط أساسي للنجاح في التداول.</li>
+          <li>الهدف: نسبة مكسب أعلى من نسبة خسارة عبر الزمن.</li>
+          <li>العامل النفسي يمثل 90% من قرارات التداول.</li>
+        </ul>
+        <div class="alert alert-tip">
+          <span class="alert-icon">✅</span>
+          <div><strong>نصيحة ذهبية:</strong> اكتب في ورقة جانبك: "الخسارة جزء طبيعي من رحلتي." وتذكرها دائماً قبل كل صفقة.</div>
+        </div>
+        <div class="alert alert-error">
+          <span class="alert-icon">🚫</span>
+          <div><strong>خطأ شائع:</strong> "الانتقام من السوق" بعد الخسارة – محاولة استرداد الخسارة فوراً بصفقات متهورة تُفاقم الضرر.</div>
+        </div>
+      </div>
+
+      <div class="quiz-box">
+        <h4>🧪 أسئلة مراجعة الوحدة الأولى</h4>
+        <div class="quiz-item">
+          ما التعريف الدقيق للتداول؟
+          <span class="quiz-answer">مبادلة شيء بآخر: بيع وشراء في السوق.</span>
+        </div>
+        <div class="quiz-item">
+          ما العاملان الوحيدان اللذان يتحكمان في تحرك السعر؟
+          <span class="quiz-answer">العرض والطلب.</span>
+        </div>
+        <div class="quiz-item">
+          لماذا يخسر 95% من المبتدئين في التداول؟
+          <span class="quiz-answer">يدخلون عشوائياً بدون تحليل أو استراتيجية، بدافع الطمع فقط.</span>
+        </div>
+        <div class="quiz-item">
+          ما المقصود بـ"الانتقام من السوق"؟
+          <span class="quiz-answer">محاولة استرداد الخسارة بصفقات سريعة غير مدروسة تزيد الخسارة.</span>
+        </div>
+        <div class="quiz-item">
+          ما نسبة العامل النفسي في قرارات التداول؟
+          <span class="quiz-answer">90% من القرارات تأتي من العامل النفسي.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 2 -->
+<div class="page">
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">٢</div>
+      <h3>الوحدة الثانية: منصات التداول وعلوم التحليل وأنواع المتداولين</h3>
+    </div>
+    <div class="module-body">
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">١</span> منصات التداول: Tier 1 و Tier 2</h4>
+        <ul>
+          <li>المنصة هي البنك الذي تتداول وتودع وتسحب منه.</li>
+          <li><strong>Tier 1:</strong> Binance, OKX, Bybit (للعملات الرقمية) – الأكثر مستخدمين وأعلى رأس مال.</li>
+          <li><strong>Tier 2:</strong> منصات ناشئة تقدم عمولات أقل لاستقطاب المتداولين.</li>
+          <li>فوركس: XM من أفضل المنصات الموثوقة.</li>
+          <li>أسهم: Interactive Broker (أو من خلال بعض البنوك مباشرة).</li>
+          <li>لا توجد منصة بدون عمولة، لكنها ضئيلة جداً (~0.08% لكل صفقة).</li>
+        </ul>
+        <div class="alert alert-note">
+          <span class="alert-icon">📌</span>
+          <div><strong>ملاحظة هامة:</strong> منصات العملات الرقمية ≠ منصات الفوركس ≠ منصات الأسهم. هي ثلاثة أنظمة مستقلة تماماً.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٢</span> علوم التحليل: أنواعها وأفضلها</h4>
+        <ul>
+          <li>التحليل الفني (أساسي ولا غنى عنه) → الدعوم، المقاومات، الترندات، النماذج.</li>
+          <li>ICT, Elliott Wave الموجي, التحليل الزمني (جان), الحجمي, الرقمي.</li>
+          <li>لا يوجد "أفضل علم للتحليل" – كلها أدوات صالحة، اختر ما يناسبك.</li>
+          <li>الأساس دائماً: التحليل الفني → ثم تُضيف فوقه باقي العلوم.</li>
+        </ul>
+        <div class="alert alert-error">
+          <span class="alert-icon">🚫</span>
+          <div><strong>خطأ شائع:</strong> البدء بتعلم ICT أو الموجي قبل إتقان التحليل الفني الأساسي. هذا مثل بناء سقف بدون أساس.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٣</span> أنواع المتداولين الثلاثة</h4>
+        <div class="trader-cards">
+          <div class="trader-card short">
+            <div class="t-icon">⚡</div>
+            <h4>قصير المدى (سكالبر)</h4>
+            <p>صفقات يومية سريعة (10 دقائق – ساعة). يحتاج تركيزاً عالياً ووقتاً كاملاً.</p>
+          </div>
+          <div class="trader-card mid">
+            <div class="t-icon">⚖️</div>
+            <h4>متوسط المدى (سوينج)</h4>
+            <p>صفقات من أيام إلى أسابيع. مناسب كنشاط ثانٍ مع العمل الأساسي.</p>
+          </div>
+          <div class="trader-card long">
+            <div class="t-icon">🏦</div>
+            <h4>طويل المدى (مستثمر)</h4>
+            <p>شراء والاحتفاظ لأشهر أو سنوات. يراجع الشارت نادراً.</p>
+          </div>
+        </div>
+        <div class="alert alert-tip">
+          <span class="alert-icon">✅</span>
+          <div><strong>نصيحة ذهبية:</strong> لا تترك وظيفتك من أجل التداول إلا بعد تحقيق أرباح ثابتة مستمرة لمدة 6-12 شهراً على الأقل.</div>
+        </div>
+      </div>
+
+      <div class="quiz-box">
+        <h4>🧪 أسئلة مراجعة الوحدة الثانية</h4>
+        <div class="quiz-item">
+          ما الفرق الرئيسي بين منصة Tier 1 و Tier 2؟
+          <span class="quiz-answer">عدد المستخدمين وحجم رأس المال وحجم التداول الإجمالي في المنصة.</span>
+        </div>
+        <div class="quiz-item">
+          لماذا يجب تعلم التحليل الفني أولاً قبل أي علم آخر؟
+          <span class="quiz-answer">لأنه الأساس الذي تُبنى عليه كل علوم التحليل الأخرى.</span>
+        </div>
+        <div class="quiz-item">
+          ما نوع المتداول المناسب لشخص عنده وظيفة ولا يستطيع متابعة السوق يومياً؟
+          <span class="quiz-answer">متوسط المدى (Swing Trader).</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 3 -->
+<div class="page">
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">٣</div>
+      <h3>الوحدة الثالثة: التحليل الفني الشامل</h3>
+    </div>
+    <div class="module-body">
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">١</span> الدعوم والمقاومات – أساس التحليل</h4>
+        <ul>
+          <li><strong>الدعم:</strong> منطقة قوة شرائية، ينطلق منها السعر صعوداً. نشتري عندها.</li>
+          <li><strong>المقاومة:</strong> منطقة قوة بيعية، يرتد منها السعر هبوطاً. نبيع عندها.</li>
+          <li>شرط تأكيد الدعم: السعر يرتد منه مرتين على الأقل.</li>
+          <li>شرط تأكيد المقاومة: السعر يهبط منها مرتين على الأقل.</li>
+          <li>نرسم الدعوم والمقاومات على أجسام الشموع، لا على الديول.</li>
+        </ul>
+        <div class="alert alert-example">
+          <span class="alert-icon">📊</span>
+          <div><strong>مثال عملي:</strong> السعر يهبط ويلمس 100$ ويصعد، ثم يهبط مرة ثانية ليلمس 100$ ويصعد مجدداً → هذا دعم قوي، ادخل صفقة شراء عند اللمسة الثالثة.</div>
+        </div>
+        <div class="alert alert-note">
+          <span class="alert-icon">📌</span>
+          <div><strong>قاعدة ذهبية:</strong> لا تنفذ قواعدك على السوق. السوق ينفذ قواعده عليك. أنت تتبع السعر ولا تعارضه.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٢</span> الترندات وأنواعها</h4>
+        <ul>
+          <li><strong>ترند صاعد:</strong> قاعين فأكثر، كل قاع أعلى من السابق → ادخل شراء عند لمس الخط للمرة الثالثة.</li>
+          <li><strong>ترند هابط:</strong> قمتين فأكثر، كل قمة أقل من السابقة → ادخل بيع عند لمس الخط للمرة الثالثة.</li>
+          <li>كسر الترند = انعكاس الاتجاه. هذه هي اللحظة المهمة.</li>
+          <li>يُرسم الترند على أجسام الشموع وله ميل واضح.</li>
+        </ul>
+        <div class="alert alert-warning">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>تحذير:</strong> لا ترسم ترنداً على لمسة واحدة. تحتاج على الأقل قمتين أو قاعين لتأكيده.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٣</span> النماذج السعرية الكلاسيكية</h4>
+        <ul>
+          <li><strong>القاع الثنائي (W):</strong> قاعان متماثلان → اختراق خط العنق = شراء. الهدف = ارتفاع النموذج.</li>
+          <li><strong>القمة الثنائية (M):</strong> قمتان متماثلتان → اختراق خط العنق = بيع.</li>
+          <li><strong>الرأس والكتفين:</strong> انعكاس الاتجاه الصاعد إلى هابط. كسر خط العنق = بيع.</li>
+          <li><strong>الرأس والكتفين المقلوب:</strong> انعكاس الاتجاه الهابط إلى صاعد = شراء.</li>
+          <li><strong>الوتد الهابط:</strong> يخترق للأعلى = شراء. الوتد الصاعد: يخترق للأسفل = بيع.</li>
+          <li><strong>الكوب والعروة:</strong> بعد تكوّن الكوب والعروة، اختراق خط العنق = شراء.</li>
+          <li><strong>العلم:</strong> صعود قوي ثم تماسك جانبي ثم اختراق للأعلى = متابعة الصعود.</li>
+        </ul>
+        <div class="alert alert-example">
+          <span class="alert-icon">📊</span>
+          <div><strong>كيف تقيس الهدف:</strong> قِس ارتفاع النموذج (من القمة إلى خط العنق) ثم أسقط هذه المسافة من نقطة الاختراق. هذا هو هدفك السعري.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٤</span> أهم المؤشرات التقنية</h4>
+        <ul>
+          <li><strong>RSI:</strong> فوق 70 = تشبع شرائي (هبوط محتمل). تحت 30 = تشبع بيعي (صعود محتمل).</li>
+          <li><strong>EMA 50 و EMA 200:</strong> أدوات لتحديد اتجاه السوق الكبير.</li>
+          <li><strong>Golden Cross:</strong> EMA 50 يخترق EMA 200 من أسفل = إشارة صعود قوية.</li>
+          <li><strong>Death Cross:</strong> EMA 50 يخترق EMA 200 من فوق = إشارة هبوط قوية.</li>
+          <li>المؤشرات مساعِدة فقط، لا تتداول عليها وحدها بمعزل عن التحليل.</li>
+        </ul>
+      </div>
+
+      <div class="quiz-box">
+        <h4>🧪 أسئلة مراجعة الوحدة الثالثة</h4>
+        <div class="quiz-item">
+          ما الفرق بين الدعم والمقاومة؟
+          <span class="quiz-answer">الدعم منطقة شراء يرتد منها السعر للأعلى. المقاومة منطقة بيع يرتد منها للأسفل.</span>
+        </div>
+        <div class="quiz-item">
+          متى يُعتبر الترند الصاعد منكسراً؟
+          <span class="quiz-answer">عندما يخترق السعر خط الترند الصاعد للأسفل.</span>
+        </div>
+        <div class="quiz-item">
+          ماذا يعني Golden Cross في مؤشر EMA؟
+          <span class="quiz-answer">EMA 50 يتجاوز EMA 200 من الأسفل للأعلى، وهو إشارة صعود قوية.</span>
+        </div>
+        <div class="quiz-item">
+          ما الشرط الأساسي لاعتبار القاع الثنائي نموذجاً سعرياً صحيحاً؟
+          <span class="quiz-answer">اختراق خط العنق (المقاومة بين القاعين) بعد تكون القاع الثاني.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 4 -->
+<div class="page">
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">٤</div>
+      <h3>الوحدة الرابعة: مفاتيح قراءة السوق</h3>
+    </div>
+    <div class="module-body">
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">١</span> التايم فريم – إطار الزمن</h4>
+        <ul>
+          <li>التايم فريم هو المدة الزمنية التي تمثلها كل شمعة على الشارت.</li>
+          <li><strong>سكالبر:</strong> 15 دقيقة (تداول) + ساعة و4 ساعات (اتجاه).</li>
+          <li><strong>سوينج تريدر:</strong> 4 ساعات (تداول) + يومي (اتجاه).</li>
+          <li><strong>مستثمر:</strong> أسبوعي + شهري (يراجع الشارت نادراً).</li>
+          <li>قاعدة: دائماً تحقق من الفريم الأكبر لتحديد الاتجاه، ثم نفذ على الأصغر.</li>
+        </ul>
+        <div class="alert alert-note">
+          <span class="alert-icon">📌</span>
+          <div><strong>ملاحظة:</strong> الشمعة تتكون من: فتح + إغلاق + ذيل علوي + ذيل سفلي. اللون الأخضر = إغلاق أعلى من الفتح. اللون الأحمر = إغلاق أقل من الفتح.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٢</span> أشكال الشموع اليابانية الأهم</h4>
+        <ul>
+          <li><strong>شمعة الابتلاع (Engulfing):</strong> شمعة كبيرة تبتلع السابقة → خضراء = صعود، حمراء = هبوط.</li>
+          <li><strong>المطرقة (Hammer):</strong> جسم صغير + ذيل سفلي طويل في نهاية هبوط → صعود وشيك.</li>
+          <li><strong>النجم الساقط (Shooting Star):</strong> جسم صغير + ذيل علوي طويل في نهاية صعود → هبوط وشيك.</li>
+          <li><strong>الدوجي (Doji):</strong> جسم صغير جداً + ذيلان طويلان → تردد وانعكاس محتمل.</li>
+        </ul>
+        <div class="alert alert-warning">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>تحذير:</strong> شموع يابانية وحدها ≠ صفقة. استخدمها فقط لتأكيد تحليلك من دعوم، مقاومات، وترندات.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٣</span> أداة فيبوناتشي – الأداة الذهبية</h4>
+        <ul>
+          <li>فيبوناتشي تُحدد مناطق دعم ومقاومة مستقبلية لم تُرسم بعد.</li>
+          <li>أهم مستوى: <span class="highlight">0.618</span> (النسبة الذهبية) – أقوى مناطق الارتداد.</li>
+          <li>للمقاومات: ارسم من القمة (1) إلى القاع (0) في ترند صاعد.</li>
+          <li>للدعوم: ارسم من القاع (1) إلى القمة (0) في ترند هابط.</li>
+          <li>اختراق 0.618 يفتح دورة سعرية أكبر = غيّر نقطة القياس.</li>
+        </ul>
+        <div class="alert alert-example">
+          <span class="alert-icon">📊</span>
+          <div><strong>مثال عملي:</strong> السعر صعد من 100$ إلى 200$، ثم بدأ التصحيح. مستوى 0.618 = $138 تقريباً. هذه منطقة شراء محتملة للصعود مجدداً.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٤</span> RSI والدايفرجنس</h4>
+        <ul>
+          <li><strong>دايفرجنس إيجابي (Bullish):</strong> السعر يسجل قاعاً أقل لكن RSI يسجل قاعاً أعلى → صعود وشيك.</li>
+          <li><strong>دايفرجنس سلبي (Bearish):</strong> السعر يسجل قمة أعلى لكن RSI يسجل قمة أقل → هبوط وشيك.</li>
+          <li>الدايفرجنس من أقوى إشارات الانعكاس ويُستخدم مع الدعوم والمقاومات.</li>
+        </ul>
+      </div>
+
+      <div class="quiz-box">
+        <h4>🧪 أسئلة مراجعة الوحدة الرابعة</h4>
+        <div class="quiz-item">
+          ما أهم مستوى في أداة فيبوناتشي ولماذا؟
+          <span class="quiz-answer">0.618 (النسبة الذهبية) – أقوى مناطق الارتداد وأكثرها دقة في تحديد الدعوم والمقاومات.</span>
+        </div>
+        <div class="quiz-item">
+          ما الفريم المناسب للمتداول في متوسط المدى؟
+          <span class="quiz-answer">4 ساعات للتداول، اليومي لمراقبة الاتجاه العام.</span>
+        </div>
+        <div class="quiz-item">
+          ما معنى دايفرجنس سلبي على RSI؟
+          <span class="quiz-answer">السعر يصنع قمة أعلى لكن RSI يصنع قمة أقل → إشارة هبوط وشيك.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODULE 5 -->
+<div class="page">
+  <div class="module">
+    <div class="module-header">
+      <div class="module-num">٥</div>
+      <h3>الوحدة الخامسة: سيكولوجية التداول وقراءة السوق</h3>
+    </div>
+    <div class="module-body">
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">١</span> الأخبار وتأثيرها على السوق</h4>
+        <ul>
+          <li>تحليل الأخبار لا يقل أهمية عن تحليل السعر – الأخبار تحرك السوق.</li>
+          <li>السوق <strong>غالباً يمشي عكس الخبر</strong> ظاهرياً: قرأ السوق الخبر قبلك.</li>
+          <li>هبوط قوي + أخبار سلبية كثيرة → توقع صعوداً قريباً.</li>
+          <li>صعود قوي + أخبار إيجابية كثيرة → توقع هبوطاً قريباً.</li>
+        </ul>
+        <div class="alert alert-warning">
+          <span class="alert-icon">⚠️</span>
+          <div><strong>تحذير:</strong> لا تتداول بناءً على قراءة سطحية للخبر. السوق يمتص الخبر قبل نشره في الغالب. الخبر أداة تأكيد، وليس أداة دخول.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٢</span> الخوف والطمع – محركا السوق النفسيان</h4>
+        <ul>
+          <li>السوق يمشي <strong>عكس رغبة الأغلبية</strong> من المتداولين الصغار.</li>
+          <li>معظم المتداولين طماعون ومتحمسون للصعود → توقع هبوطاً.</li>
+          <li>معظم المتداولين خائفون مرعوبون → توقع صعوداً.</li>
+          <li>مؤشر Fear & Greed Index متاح لسوق العملات الرقمية.</li>
+        </ul>
+        <div class="alert alert-example">
+          <span class="alert-icon">📊</span>
+          <div><strong>مثال عملي:</strong> عندما يتحدث الجميع عن أن البيتكوين سيصل إلى مليون دولار وكل شخص يشتري → هذه إشارة تحذير قوية للبيع.</div>
+        </div>
+      </div>
+
+      <div class="lesson">
+        <h4><span class="lesson-icon">٣</span> دورة السوق (Bull & Bear)</h4>
+        <ul>
+          <li>لا يوجد سوق يصعد أو يهبط إلى ما لا نهاية. كل شيء دوري.</li>
+          <li>كل صعود (Bull) يتبعه هبوط (Bear)، وكل هبوط يتبعه صعود.</li>
+          <li>هذه الدورة ثابتة وموثقة في جميع الأسواق على مدى التاريخ.</li>
+          <li>فهم موقعك في الدورة يغير استراتيجيتك بالكامل.</li>
+        </ul>
+        <div class="alert alert-tip">
+          <span class="alert-icon">✅</span>
+          <div><strong>نصيحة ذهبية:</strong> في السوق الهابط لا تيأس، وفي السوق الصاعد لا تطمع. الدورة ستكمل مسارها دائماً.</div>
+        </div>
+      </div>
+
+      <div class="quiz-box">
+        <h4>🧪 أسئلة مراجعة الوحدة الخامسة</h4>
+        <div class="quiz-item">
+          ماذا يعني إذا كان مؤشر الطمع والخوف في منطقة "طمع شديد"؟
+          <span class="quiz-answer">إشارة تحذير: السوق ربما بالغ في صعوده وهبوط وشيك.</span>
+        </div>
+        <div class="quiz-item">
+          لماذا السوق يتحرك عكس الخبر في أغلب الأحيان؟
+          <span class="quiz-answer">لأن الكبار (الصناع والمؤسسات) يقرؤون الخبر قبل نشره ويتصرفون مسبقاً.</span>
+        </div>
+        <div class="quiz-item">
+          ما المقصود بدورة السوق؟
+          <span class="quiz-answer">تعاقب منتظم بين مرحلة الصعود (Bull) ومرحلة الهبوط (Bear) في جميع الأسواق.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- KEY TAKEAWAYS + GLOSSARY + SCHEDULE + ASSIGNMENT -->
+<div class="page">
+  <h2 class="page-title">🏆 أهم 10 خلاصات يجب حفظها</h2>
+  <div class="takeaway-grid">
+    <div class="takeaway-item">
+      <div class="takeaway-num">١</div>
+      <div class="takeaway-text">التداول = بيع وشراء مبني على التحليل، وليس التخمين. العشوائية تقود إلى الخسارة دائماً.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٢</div>
+      <div class="takeaway-text">العرض والطلب هما المحرك الوحيد للسعر. كل شيء آخر يعكس هذين العاملين.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٣</div>
+      <div class="takeaway-text">الخسارة جزء طبيعي من التداول. المتداول الناجح يتحكم في نسبة الخسارة، لا يلغيها.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٤</div>
+      <div class="takeaway-text">التحليل الفني هو أساس كل علوم التداول. لا تبن فوقه قبل إتقانه.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٥</div>
+      <div class="takeaway-text">الدعم منطقة شراء، المقاومة منطقة بيع. تأكدهما بالارتداد مرتين على الأقل.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٦</div>
+      <div class="takeaway-text">اتبع الترند ولا تعارضه. كسر الترند = انعكاس الاتجاه.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٧</div>
+      <div class="takeaway-text">المؤشرات (RSI, EMA) أدوات تأكيد فقط. لا تتداول عليها وحدها.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٨</div>
+      <div class="takeaway-text">مستوى 0.618 في فيبوناتشي هو أقوى مناطق الدعم والمقاومة المستقبلية.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">٩</div>
+      <div class="takeaway-text">السوق يمشي عكس الأغلبية. كثرة الطمع تسبق الهبوط. كثرة الخوف تسبق الصعود.</div>
+    </div>
+    <div class="takeaway-item">
+      <div class="takeaway-num">١٠</div>
+      <div class="takeaway-text">كل صعود يتبعه هبوط وكل هبوط يتبعه صعود. الدورة تعمل دائماً. الصبر أداة.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- GLOSSARY -->
+  <h2 class="page-title" style="margin-top:20px">📖 مسرد المصطلحات الأساسية</h2>
+  <div class="glossary-grid">
+    <div class="glossary-item">
+      <div class="glossary-term">الشارت (Chart)</div>
+      <div class="glossary-def">الرسم البياني الذي يُظهر حركة السعر عبر الزمن.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">الدعم (Support)</div>
+      <div class="glossary-def">منطقة سعرية يرتد منها السعر صعوداً بسبب قوة الشراء.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">المقاومة (Resistance)</div>
+      <div class="glossary-def">منطقة سعرية يرتد منها السعر هبوطاً بسبب قوة البيع.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">الترند (Trend)</div>
+      <div class="glossary-def">الاتجاه العام لحركة السعر: صاعد أو هابط أو جانبي.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">RSI</div>
+      <div class="glossary-def">مؤشر القوة النسبية، يقيس قوة الحركة. 70+ تشبع شرائي، 30- تشبع بيعي.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">EMA</div>
+      <div class="glossary-def">المتوسط المتحرك الأسي، يُحدد اتجاه السوق العام.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">فيبوناتشي (Fibonacci)</div>
+      <div class="glossary-def">أداة لتحديد مناطق دعم ومقاومة مستقبلية. أهم مستوى: 0.618.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">الدايفرجنس (Divergence)</div>
+      <div class="glossary-def">تعارض اتجاه السعر مع مؤشر RSI، يُشير إلى انعكاس وشيك.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">خط العنق (Neckline)</div>
+      <div class="glossary-def">خط المقاومة أو الدعم الرئيسي في النماذج السعرية. اختراقه يُؤكد النموذج.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">الابتلاع (Engulfing)</div>
+      <div class="glossary-def">شمعة يابانية تبتلع الشمعة السابقة، تُشير إلى انعكاس الاتجاه.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Bull Market</div>
+      <div class="glossary-def">سوق صاعد: السعر في اتجاه تصاعدي عام ومستمر.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">Bear Market</div>
+      <div class="glossary-def">سوق هابط: السعر في اتجاه تنازلي عام ومستمر.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">الفيز (Fee)</div>
+      <div class="glossary-def">عمولة التداول التي تأخذها المنصة مقابل كل صفقة.</div>
+    </div>
+    <div class="glossary-item">
+      <div class="glossary-term">وقف الخسارة (Stop Loss)</div>
+      <div class="glossary-def">أمر تلقائي لإغلاق الصفقة عند مستوى خسارة محدد مسبقاً.</div>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE + ASSIGNMENT -->
+<div class="page">
+  <h2 class="page-title">📅 الخطة الزمنية: 5 أيام × ساعتان</h2>
+  <table class="schedule-table">
+    <tr>
+      <th>اليوم</th>
+      <th>الموضوع</th>
+      <th>المهام العملية</th>
+    </tr>
+    <tr>
+      <td>اليوم الأول</td>
+      <td>الوحدة الأولى: مفاهيم التداول الأساسية + العامل النفسي</td>
+      <td>اكتب 5 مخاوف تداولية لديك وكيف ستتعامل معها</td>
+    </tr>
+    <tr>
+      <td>اليوم الثاني</td>
+      <td>الوحدة الثانية: منصات التداول + أنواع المتداولين + علوم التحليل</td>
+      <td>افتح حساباً تجريبياً على منصتك المختارة وتعرف على الواجهة</td>
+    </tr>
+    <tr>
+      <td>اليوم الثالث</td>
+      <td>الوحدة الثالثة: التحليل الفني (دعوم، مقاومات، ترندات، نماذج)</td>
+      <td>ارسم 3 دعوم و3 مقاومات على شارت البيتكوين اليومي</td>
+    </tr>
+    <tr>
+      <td>اليوم الرابع</td>
+      <td>الوحدة الرابعة: التايم فريم + شموع يابانية + فيبوناتشي + RSI</td>
+      <td>حدد نموذجاً سعرياً واحداً على شارت وأحسب هدفه السعري</td>
+    </tr>
+    <tr>
+      <td>اليوم الخامس</td>
+      <td>الوحدة الخامسة: سيكولوجية السوق + مراجعة شاملة</td>
+      <td>نفذ المشروع العملي التطبيقي الكامل أدناه</td>
+    </tr>
+  </table>
+
+  <hr class="divider">
+
+  <h2 class="page-title" style="margin-top:20px">🎯 المشروع العملي التطبيقي</h2>
+  <div class="assignment-box">
+    <h3>مشروع: تحليل وبناء خطة صفقة كاملة</h3>
+    <p style="color:rgba(255,255,255,0.7); font-size:13px; margin-bottom:20px;">استخدم حساباً تجريبياً (Demo Account) لتنفيذ هذا المشروع بدون مخاطرة بأموال حقيقية.</p>
+
+    <div class="assignment-step">
+      <div class="step-num">١</div>
+      <div class="step-text">اختر سوقاً من الثلاثة (فوركس أو عملات رقمية أو أسهم) وافتح شارته على الفريم اليومي.</div>
+    </div>
+    <div class="assignment-step">
+      <div class="step-num">٢</div>
+      <div class="step-text">ارسم الدعوم والمقاومات الرئيسية، وحدد ترند السوق الحالي (صاعد، هابط، أم جانبي).</div>
+    </div>
+    <div class="assignment-step">
+      <div class="step-num">٣</div>
+      <div class="step-text">ابحث عن نموذج سعري واضح (قاع ثنائي، قمة ثنائية، رأس وكتفين، إلخ) وأشر إليه على الشارت.</div>
+    </div>
+    <div class="assignment-step">
+      <div class="step-num">٤</div>
+      <div class="step-text">طبّق أداة فيبوناتشي لتحديد مستويات الدعم أو المقاومة المستقبلية، وراقب مستوى 0.618.</div>
+    </div>
+    <div class="assignment-step">
+      <div class="step-num">٥</div>
+      <div class="step-text">اقرأ مؤشر RSI: هل هناك تشبع شرائي/بيعي؟ هل يوجد دايفرجنس؟</div>
+    </div>
+    <div class="assignment-step">
+      <div class="step-num">٦</div>
+      <div class="step-text">حدد نقطة الدخول، ووقف الخسارة، والهدف السعري. احسب نسبة المخاطرة إلى العائد (Risk:Reward).</div>
+    </div>
+    <div class="assignment-step">
+      <div class="step-num">٧</div>
+      <div class="step-text">نفذ الصفقة على الحساب التجريبي وتابعها لمدة 3 أيام، ثم سجّل ملاحظاتك: ماذا تعلمت؟</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- ===== TASK 2: PRINT GUIDE ===== -->
+<!-- ============================= -->
+
+<div class="page">
+  <div class="section-header">
+    <div class="section-number">٢</div>
+    <div>
+      <h2>الدليل التعليمي الجاهز للطباعة</h2>
+      <p class="sub">مرجع سريع شامل لأدوات التحليل الفني والتداول</p>
+    </div>
+  </div>
+
+  <h2 class="page-title">📐 دليل الدعوم والمقاومات</h2>
+
+  <div class="alert alert-note">
+    <span class="alert-icon">📌</span>
+    <div><strong>التعريف:</strong> الدعم = منطقة قوة شرائية يرتد منها السعر للأعلى. المقاومة = منطقة قوة بيعية يرتد منها السعر للأسفل.</div>
+  </div>
+
+  <h3 style="color:var(--navy); margin: 20px 0 12px; font-size:16px;">كيف ترسم الدعوم والمقاومات بشكل صحيح؟</h3>
+  <ol style="padding-right:20px; font-size:14px; line-height:2;">
+    <li>افتح الشارت على الفريم المناسب لنوع تداولك.</li>
+    <li>ابحث عن النقاط التي ارتد منها السعر بشكل واضح.</li>
+    <li>ارسم خطاً أفقياً يمس <strong>أجسام الشموع</strong> (لا الذيول) عند هذه النقاط.</li>
+    <li>لا تعتبر المنطقة دعماً أو مقاومة إلا بعد الارتداد منها مرتين على الأقل.</li>
+    <li>كلما زاد عدد الارتدادات من المنطقة نفسها، كان الدعم/المقاومة أقوى.</li>
+  </ol>
+
+  <div class="alert alert-tip">
+    <span class="alert-icon">✅</span>
+    <div><strong>نصيحة ذهبية:</strong> المقاومة المكسورة تتحول إلى دعم، والدعم المكسور يتحول إلى مقاومة. هذه ظاهرة تُسمى "انعكاس الأدوار".</div>
+  </div>
+
+  <div class="alert alert-error">
+    <span class="alert-icon">🚫</span>
+    <div><strong>خطأ شائع:</strong> رسم دعم أو مقاومة على الذيول (الوك) بدلاً من أجسام الشموع. هذا يعطيك مناطق خاطئة.</div>
+  </div>
+
+  <h2 class="page-title" style="margin-top:30px">📈 دليل الترندات والنماذج السعرية</h2>
+
+  <h3 style="color:var(--navy); margin: 0 0 12px; font-size:16px;">رسم الترندات – خطوة بخطوة</h3>
+
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;">
+    <div style="background:#F0FDF4; border:1px solid #86EFAC; border-radius:8px; padding:16px;">
+      <h4 style="color:#14532D; margin-bottom:10px; font-size:14px;">🟢 الترند الصاعد</h4>
+      <ol style="padding-right:16px; font-size:13px; line-height:1.9;">
+        <li>حدد قاعين، الثاني أعلى من الأول.</li>
+        <li>ارسم خطاً يصل بين القاعين.</li>
+        <li>مده للأمام (يمين الشارت).</li>
+        <li>عند لمس الخط للمرة الثالثة → ادخل شراء.</li>
+      </ol>
+    </div>
+    <div style="background:#FFF1F2; border:1px solid #FCA5A5; border-radius:8px; padding:16px;">
+      <h4 style="color:#991B1B; margin-bottom:10px; font-size:14px;">🔴 الترند الهابط</h4>
+      <ol style="padding-right:16px; font-size:13px; line-height:1.9;">
+        <li>حدد قمتين، الثانية أقل من الأولى.</li>
+        <li>ارسم خطاً يصل بين القمتين.</li>
+        <li>مده للأمام (يمين الشارت).</li>
+        <li>عند لمس الخط للمرة الثالثة → ادخل بيع.</li>
+      </ol>
+    </div>
+  </div>
+
+  <h3 style="color:var(--navy); margin: 16px 0 12px; font-size:16px;">النماذج السعرية الكلاسيكية – جدول سريع</h3>
+  <table class="schedule-table" style="font-size:13px;">
+    <tr>
+      <th>النموذج</th>
+      <th>الشكل</th>
+      <th>الإشارة</th>
+      <th>نقطة الدخول</th>
+    </tr>
+    <tr><td>القاع الثنائي W</td><td>قاعان متماثلان</td><td>صعود</td><td>اختراق خط العنق للأعلى</td></tr>
+    <tr><td>القمة الثنائية M</td><td>قمتان متماثلتان</td><td>هبوط</td><td>اختراق خط العنق للأسفل</td></tr>
+    <tr><td>رأس وكتفان</td><td>3 قمم، الوسطى أعلى</td><td>هبوط</td><td>كسر خط العنق للأسفل</td></tr>
+    <tr><td>رأس وكتفان مقلوب</td><td>3 قيعان، الوسطى أقل</td><td>صعود</td><td>كسر خط العنق للأعلى</td></tr>
+    <tr><td>وتد هابط</td><td>خطان هابطان يتقاربان</td><td>صعود</td><td>اختراق الخط العلوي</td></tr>
+    <tr><td>وتد صاعد</td><td>خطان صاعدان يتقاربان</td><td>هبوط</td><td>اختراق الخط السفلي</td></tr>
+    <tr><td>كوب وعروة</td><td>شكل دائري + تصحيح صغير</td><td>صعود</td><td>اختراق حافة الكوب</td></tr>
+    <tr><td>العلم</td><td>صعود قوي + تماسك</td><td>استمرار صعود</td><td>اختراق العلم للأعلى</td></tr>
+  </table>
+</div>
+
+<div class="page">
+  <h2 class="page-title">📊 دليل المؤشرات والشموع اليابانية</h2>
+
+  <h3 style="color:var(--navy); margin: 0 0 16px; font-size:16px;">مؤشر RSI – دليل الاستخدام</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:20px;">
+    <div style="background:#FFF7ED; border:1px solid #FED7AA; border-radius:8px; padding:14px; text-align:center;">
+      <div style="font-size:24px; font-weight:900; color:#EA580C;">70+</div>
+      <div style="font-size:12px; color:#9A3412; margin-top:4px;">تشبع شرائي<br>هبوط محتمل</div>
+    </div>
+    <div style="background:#F0FDF4; border:1px solid #86EFAC; border-radius:8px; padding:14px; text-align:center;">
+      <div style="font-size:24px; font-weight:900; color:#16A34A;">50</div>
+      <div style="font-size:12px; color:#14532D; margin-top:4px;">منطقة محايدة<br>اتجاه غير واضح</div>
+    </div>
+    <div style="background:#EFF6FF; border:1px solid #BFDBFE; border-radius:8px; padding:14px; text-align:center;">
+      <div style="font-size:24px; font-weight:900; color:#2563EB;">30-</div>
+      <div style="font-size:12px; color:#1E40AF; margin-top:4px;">تشبع بيعي<br>صعود محتمل</div>
+    </div>
+  </div>
+
+  <div class="alert alert-example">
+    <span class="alert-icon">📊</span>
+    <div><strong>الدايفرجنس الإيجابي:</strong> السعر يصنع قاعاً أقل + RSI يصنع قاعاً أعلى = إشارة صعود قوية جداً. العكس يُسمى دايفرجنس سلبي ويُشير للهبوط.</div>
+  </div>
+
+  <h3 style="color:var(--navy); margin: 24px 0 16px; font-size:16px;">مؤشر EMA – Golden Cross و Death Cross</h3>
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px;">
+    <div style="background:#F0FDF4; border-right:4px solid #22C55E; border-radius:8px; padding:16px;">
+      <h4 style="color:#14532D; margin-bottom:8px; font-size:14px;">🟢 Golden Cross (صعود)</h4>
+      <p style="font-size:13px; color:#1C4A1C;">EMA 50 يخترق EMA 200 من الأسفل إلى الأعلى. إشارة صعود طويل الأمد. فعّال على الفريمات الكبيرة (اليومي والأسبوعي).</p>
+    </div>
+    <div style="background:#FFF1F2; border-right:4px solid #EF4444; border-radius:8px; padding:16px;">
+      <h4 style="color:#991B1B; margin-bottom:8px; font-size:14px;">🔴 Death Cross (هبوط)</h4>
+      <p style="font-size:13px; color:#7F1D1D;">EMA 50 يخترق EMA 200 من الأعلى إلى الأسفل. إشارة هبوط طويل الأمد. يُستخدم للتحذير المبكر من تغيير الاتجاه.</p>
+    </div>
+  </div>
+
+  <h3 style="color:var(--navy); margin: 24px 0 16px; font-size:16px;">الشموع اليابانية الأساسية – دليل بصري مختصر</h3>
+  <table class="schedule-table" style="font-size:13px;">
+    <tr>
+      <th>اسم الشمعة</th>
+      <th>الشكل</th>
+      <th>الإشارة</th>
+      <th>شرط الاستخدام</th>
+    </tr>
+    <tr><td>الابتلاع الصاعد</td><td>شمعة خضراء كبيرة تبتلع الحمراء</td><td>🟢 صعود</td><td>عند منطقة دعم</td></tr>
+    <tr><td>الابتلاع الهابط</td><td>شمعة حمراء كبيرة تبتلع الخضراء</td><td>🔴 هبوط</td><td>عند منطقة مقاومة</td></tr>
+    <tr><td>المطرقة</td><td>جسم صغير + ذيل سفلي طويل</td><td>🟢 صعود</td><td>في نهاية اتجاه هابط</td></tr>
+    <tr><td>النجم الساقط</td><td>جسم صغير + ذيل علوي طويل</td><td>🔴 هبوط</td><td>في نهاية اتجاه صاعد</td></tr>
+    <tr><td>الدوجي</td><td>جسم صغير جداً + ذيلان</td><td>⚠️ انعكاس</td><td>عند دعم أو مقاومة</td></tr>
+  </table>
+
+  <div class="alert alert-warning">
+    <span class="alert-icon">⚠️</span>
+    <div><strong>تحذير هام:</strong> لا تدخل صفقة بناءً على شمعة يابانية وحدها. يجب أن تتزامن مع دعم/مقاومة أو ترند أو نموذج سعري. الشمعة أداة تأكيد فقط.</div>
+  </div>
+
+  <h3 style="color:var(--navy); margin: 24px 0 16px; font-size:16px;">أداة فيبوناتشي – دليل الاستخدام</h3>
+  <ol style="padding-right:20px; font-size:14px; line-height:2;">
+    <li><strong>في الاتجاه الصاعد:</strong> ارسم من القاع (0) إلى القمة (1) → ابحث عن الدعم عند 0.382, 0.5, 0.618.</li>
+    <li><strong>في الاتجاه الهابط:</strong> ارسم من القمة (0) إلى القاع (1) → ابحث عن المقاومة عند المستويات نفسها.</li>
+    <li>مستوى <strong>0.618 هو الأهم</strong> – إذا لم يكسره السعر، ارتد وأكمل الاتجاه الأصلي.</li>
+    <li>إذا تجاوز السعر 0.618، ابحث عن قمة أو قاع أقدم لإعادة الرسم.</li>
+  </ol>
+</div>
+
+<!-- QUICK SUMMARY PAGE -->
+<div class="summary-page">
+  <div class="summary-title">⚡ الخلاصة السريعة</div>
+  <div class="summary-subtitle">15 نقطة هي لبّ الكورس كاملاً – احفظها</div>
+
+  <div class="summary-grid">
+    <div class="summary-item">
+      <div class="s-num">١</div>
+      <p>التداول = بيع وشراء. السوق يتحرك بالعرض والطلب فقط.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٢</div>
+      <p>لا تتداول عشوائياً. كل صفقة تحتاج تحليلاً وسبباً واضحاً.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٣</div>
+      <p>الخسارة طبيعية. الهدف هو ربح أكثر من الخسارة عبر الزمن.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٤</div>
+      <p>التحليل الفني أولاً. لا تبدأ بأي علم آخر قبله.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٥</div>
+      <p>الدعم = شراء. المقاومة = بيع. ارسمهما على أجسام الشموع.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٦</div>
+      <p>الترند صديقك. لا تعارضه. ادخل معه في اتجاهه.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٧</div>
+      <p>النموذج السعري يكتمل فقط باختراق خط العنق. لا تدخل قبله.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٨</div>
+      <p>RSI فوق 70 = بيع محتمل. RSI تحت 30 = شراء محتمل.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">٩</div>
+      <p>الدايفرجنس من أقوى إشارات الانعكاس – راقبه دائماً.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">١٠</div>
+      <p>فيبوناتشي 0.618 = منطقة انعكاس. دائماً ضعها في حساباتك.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">١١</div>
+      <p>الشموع اليابانية تؤكد التحليل فقط، لا تدخل عليها وحدها.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">١٢</div>
+      <p>السوق يمشي عكس الأغلبية. الطمع الجماعي = هبوط. الخوف الجماعي = صعود.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">١٣</div>
+      <p>الأخبار تُقرأ بعكسها في الغالب. السوق يستوعب الخبر مبكراً.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">١٤</div>
+      <p>كل صعود يتبعه هبوط. كل هبوط يتبعه صعود. الدورة دائمة.</p>
+    </div>
+    <div class="summary-item">
+      <div class="s-num">١٥</div>
+      <p>لا تترك وظيفتك للتداول إلا بعد 6-12 شهراً من الأرباح الثابتة.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= -->
+<!-- ===== TASK 3: MIND MAP ===== -->
+<!-- ============================= -->
+
+<div class="mindmap-page">
+  <div class="mindmap-title">🧠 الخريطة الذهنية الشاملة</div>
+
+  <div style="text-align:center; margin-bottom:30px;">
+    <div class="mindmap-center">
+      🎯 كورس التداول الشامل – من الصفر إلى الاحتراف
+    </div>
+  </div>
+
+  <!-- BRANCH 1 -->
+  <div class="mm-branch">
+    <div class="mm-branch-title"><span class="mm-branch-icon">📘</span> الوحدة الأولى: أساسيات التداول</div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 1: ما هو التداول؟</div>
+      <div class="mm-leaf">مبادلة شيء بآخر: بيع وشراء</div>
+      <div class="mm-leaf">العرض والطلب = المحرك الوحيد للسعر</div>
+      <div class="mm-leaf">الأسواق الثلاثة: رقمية، فوركس، أسهم</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 2: كيف تكسب من التداول؟</div>
+      <div class="mm-leaf">شراء بسعر منخفض + بيع بسعر مرتفع = الربح</div>
+      <div class="mm-leaf">التداول المبني على التحليل ≠ العشوائي</div>
+      <div class="mm-alert">⚠️ 95% من المبتدئين يدخلون عشوائياً → خسارة مؤكدة</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 3: المكسب والخسارة – الحقيقة</div>
+      <div class="mm-leaf">الخسارة جزء لا يتجزأ من التداول</div>
+      <div class="mm-leaf">الهدف: ربح أكثر من الخسارة على المدى الطويل</div>
+      <div class="mm-leaf">90% من القرارات مبنية على العامل النفسي</div>
+      <div class="mm-alert">⚠️ "الانتقام من السوق" = الخطأ الأكبر للمبتدئين</div>
+    </div>
+
+    <div class="mm-note">📌 أسئلة المراجعة: العرض والطلب | تعريف التداول | الانتقام | العامل النفسي</div>
+  </div>
+
+  <!-- BRANCH 2 -->
+  <div class="mm-branch">
+    <div class="mm-branch-title"><span class="mm-branch-icon">🏦</span> الوحدة الثانية: المنصات والعلوم وأنواع المتداولين</div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 1: منصات التداول</div>
+      <div class="mm-leaf">Tier 1: Binance, OKX, Bybit (كريبتو) | XM (فوركس)</div>
+      <div class="mm-leaf">Tier 2: منصات أصغر بعمولات أقل</div>
+      <div class="mm-leaf">الأسهم: Interactive Broker أو من خلال البنك</div>
+      <div class="mm-alert">⚠️ كل سوق له منصاته المستقلة تماماً</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 2: علوم التحليل</div>
+      <div class="mm-leaf">التحليل الفني (الأساس الذي لا غنى عنه)</div>
+      <div class="mm-leaf">ICT | موجي Elliott | زمني Gann | حجمي | رقمي</div>
+      <div class="mm-alert">⚠️ لا تبدأ بـ ICT أو الموجي قبل إتقان الفني</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 3: أنواع المتداولين</div>
+      <div class="mm-leaf">⚡ قصير المدى (سكالبر): صفقات يومية سريعة</div>
+      <div class="mm-leaf">⚖️ متوسط المدى (سوينج): أيام إلى أسابيع</div>
+      <div class="mm-leaf">🏦 طويل المدى (مستثمر): أشهر إلى سنوات</div>
+    </div>
+
+    <div class="mm-note">📌 أسئلة المراجعة: Tier 1 vs Tier 2 | لماذا الفني أولاً | المتداول المناسب لذوي الوظائف</div>
+  </div>
+
+  <!-- BRANCH 3 -->
+  <div class="mm-branch">
+    <div class="mm-branch-title"><span class="mm-branch-icon">📐</span> الوحدة الثالثة: التحليل الفني الشامل</div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 1: الدعوم والمقاومات</div>
+      <div class="mm-leaf">الدعم: قوة شراء → نشتري عنده</div>
+      <div class="mm-leaf">المقاومة: قوة بيع → نبيع عندها</div>
+      <div class="mm-leaf">التأكيد: ارتداد مرتين على الأقل</div>
+      <div class="mm-leaf">الرسم على أجسام الشموع، لا الذيول</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 2: الترندات</div>
+      <div class="mm-leaf">صاعد: قاعان فأكثر كل قاع أعلى من السابق</div>
+      <div class="mm-leaf">هابط: قمتان فأكثر كل قمة أقل من السابقة</div>
+      <div class="mm-leaf">كسر الترند = انعكاس الاتجاه</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 3: النماذج السعرية</div>
+      <div class="mm-leaf">W (قاع ثنائي) → شراء | M (قمة ثنائية) → بيع</div>
+      <div class="mm-leaf">رأس وكتفان → هبوط | مقلوب → صعود</div>
+      <div class="mm-leaf">وتد | كوب وعروة | علم</div>
+      <div class="mm-alert">⚠️ الدخول فقط بعد اختراق خط العنق، لا قبله</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 4: المؤشرات</div>
+      <div class="mm-leaf">RSI: 70+ بيع | 30- شراء</div>
+      <div class="mm-leaf">EMA 50 و 200: Golden Cross صعود | Death Cross هبوط</div>
+    </div>
+
+    <div class="mm-note">📌 أسئلة المراجعة: الدعم vs المقاومة | كسر الترند | Golden Cross | خط العنق</div>
+  </div>
+
+  <!-- BRANCH 4 -->
+  <div class="mm-branch">
+    <div class="mm-branch-title"><span class="mm-branch-icon">🔍</span> الوحدة الرابعة: مفاتيح قراءة السوق</div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 1: التايم فريم</div>
+      <div class="mm-leaf">سكالبر: 15 دقيقة + ساعة + 4 ساعات</div>
+      <div class="mm-leaf">سوينج: 4 ساعات + يومي</div>
+      <div class="mm-leaf">مستثمر: أسبوعي + شهري</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 2: الشموع اليابانية</div>
+      <div class="mm-leaf">ابتلاع → انعكاس | مطرقة → صعود | نجم ساقط → هبوط | دوجي → تردد</div>
+      <div class="mm-alert">⚠️ الشموع تؤكد التحليل، لا تُنشئه</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 3: فيبوناتشي والدايفرجنس</div>
+      <div class="mm-leaf">0.618 = النسبة الذهبية، أقوى مستويات الارتداد</div>
+      <div class="mm-leaf">دايفرجنس إيجابي: قاع السعر أقل + قاع RSI أعلى → صعود</div>
+      <div class="mm-leaf">دايفرجنس سلبي: قمة السعر أعلى + قمة RSI أقل → هبوط</div>
+    </div>
+
+    <div class="mm-note">📌 أسئلة المراجعة: أهمية 0.618 | فريم السوينج | معنى الدايفرجنس السلبي</div>
+  </div>
+
+  <!-- BRANCH 5 -->
+  <div class="mm-branch">
+    <div class="mm-branch-title"><span class="mm-branch-icon">🧠</span> الوحدة الخامسة: سيكولوجية التداول</div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 1: الأخبار</div>
+      <div class="mm-leaf">الأخبار تُؤثر على السوق بشكل غير مباشر</div>
+      <div class="mm-leaf">السوق يمشي عكس الخبر في الغالب</div>
+      <div class="mm-leaf">هبوط + أخبار سلبية كثيرة → توقع صعود</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 2: الخوف والطمع</div>
+      <div class="mm-leaf">السوق يعاكس الأغلبية دائماً</div>
+      <div class="mm-leaf">طمع جماعي → هبوط وشيك</div>
+      <div class="mm-leaf">خوف جماعي → صعود وشيك</div>
+      <div class="mm-leaf">مؤشر Fear & Greed Index للعملات الرقمية</div>
+    </div>
+
+    <div class="mm-sub">
+      <div class="mm-sub-title">الدرس 3: دورة السوق</div>
+      <div class="mm-leaf">Bull Market (صاعد) → Bear Market (هابط) → وهكذا</div>
+      <div class="mm-leaf">الدورة ثابتة في جميع الأسواق عبر التاريخ</div>
+    </div>
+
+    <div class="mm-note">📌 أسئلة المراجعة: مؤشر الطمع والخوف | لماذا يعاكس الخبر | معنى دورة السوق</div>
+  </div>
+
+  <!-- GLOSSARY BRANCH -->
+  <div class="mm-branch">
+    <div class="mm-branch-title"><span class="mm-branch-icon">📖</span> المصطلحات الأساسية (Glossary)</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; padding-right:20px; margin-top:10px;">
+      <div class="mm-leaf" style="padding-right:0;">الدعم: منطقة قوة شرائية</div>
+      <div class="mm-leaf" style="padding-right:0;">المقاومة: منطقة قوة بيعية</div>
+      <div class="mm-leaf" style="padding-right:0;">الترند: الاتجاه العام للسعر</div>
+      <div class="mm-leaf" style="padding-right:0;">RSI: مقياس قوة الحركة (30-70)</div>
+      <div class="mm-leaf" style="padding-right:0;">فيبوناتشي: مستويات انعكاس مستقبلية</div>
+      <div class="mm-leaf" style="padding-right:0;">الدايفرجنس: تعارض السعر مع المؤشر</div>
+      <div class="mm-leaf" style="padding-right:0;">خط العنق: مستوى تأكيد النموذج</div>
+      <div class="mm-leaf" style="padding-right:0;">Bull/Bear: صاعد/هابط</div>
+      <div class="mm-leaf" style="padding-right:0;">وقف الخسارة: حد الخسارة الآمن</div>
+      <div class="mm-leaf" style="padding-right:0;">الفيز: عمولة التداول للمنصة</div>
+    </div>
+  </div>
+
+  <!-- SUMMARY BRANCH -->
+  <div class="mm-branch">
+    <div class="mm-branch-title"><span class="mm-branch-icon">⚡</span> الخلاصة النهائية – 15 نقطة</div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; padding-right:20px; margin-top:10px;">
+      <div class="mm-leaf" style="padding-right:0;">١- التداول = تحليل لا عشوائية</div>
+      <div class="mm-leaf" style="padding-right:0;">٢- العرض والطلب = كل شيء</div>
+      <div class="mm-leaf" style="padding-right:0;">٣- الخسارة طبيعية وجزء من اللعبة</div>
+      <div class="mm-leaf" style="padding-right:0;">٤- الفني أولاً دائماً</div>
+      <div class="mm-leaf" style="padding-right:0;">٥- دعم = شراء | مقاومة = بيع</div>
+      <div class="mm-leaf" style="padding-right:0;">٦- اتبع الترند ولا تعارضه</div>
+      <div class="mm-leaf" style="padding-right:0;">٧- النموذج يكتمل بكسر خط العنق</div>
+      <div class="mm-leaf" style="padding-right:0;">٨- RSI: 70 بيع | 30 شراء</div>
+      <div class="mm-leaf" style="padding-right:0;">٩- الدايفرجنس = انعكاس وشيك</div>
+      <div class="mm-leaf" style="padding-right:0;">١٠- 0.618 = الأقوى في فيبوناتشي</div>
+      <div class="mm-leaf" style="padding-right:0;">١١- الشموع تؤكد لا تبدأ</div>
+      <div class="mm-leaf" style="padding-right:0;">١٢- طمع جماعي = هبوط</div>
+      <div class="mm-leaf" style="padding-right:0;">١٣- الأخبار تُقرأ بعكسها</div>
+      <div class="mm-leaf" style="padding-right:0;">١٤- الدورة دائمة: صعود ثم هبوط</div>
+      <div class="mm-leaf" style="padding-right:0;">١٥- لا تترك وظيفتك قبل 6 أشهر أرباح</div>
+    </div>
+  </div>
+
+  <div style="text-align:center; margin-top:40px; padding-top:20px; border-top:1px solid rgba(255,215,0,0.2); color:rgba(255,255,255,0.4); font-size:12px;">
+    كورس التداول الشامل · خبرة 10 سنوات في أسواق المال · مبني على أحدث مناهج التحليل الفني والسيكولوجي
+  </div>
+</div>
+
+</body>
+</html>
